@@ -1,0 +1,18 @@
+package libraryApp;
+import java.sql.*;
+public class ConnectionManager {
+	Connection con = null;
+	Statement stmt = null;
+	ResultSet result = null;
+//	Constructor
+	ConnectionManager(){
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","root");
+		}
+		catch(Exception e) {
+			System.out.println("Database Connection Failed...!");
+			System.out.println("Error : "+e.toString());
+		}
+	}
+}
