@@ -65,18 +65,21 @@ public class existUser extends library {
 			
 			connect.rs = connect.stmt.executeQuery(Query);
 
-			if (connect.rs.next()) {  // Move to the first row
+			if (connect.rs.next()) {  
+				// Move to the first row
 //				System.out.println((connect.rs.getString("name")));
 //				System.out.println((connect.rs.getString("password")));
 				
 				boolean userid = (connect.rs.getString("name")).equals(getUserid());
 				boolean password = (connect.rs.getString("password")).equals(getPassword());
+				
 //				System.out.print(userid);
 //				System.out.print(password);
+				
 			     if( userid && password){
 			     System.out.println("\nValidation Successful...!\n");
 //			     user interface will come here! 
-			     
+			     new userInterface(getUserid());
 			     }
 			     else {
 			    		System.out.println("\nUserid or Password doesn't match...!\n");
