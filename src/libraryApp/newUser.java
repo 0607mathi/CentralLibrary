@@ -37,13 +37,39 @@ public class newUser extends library {
 		storingData();
 	}
 	
+//	this method for duplicate entry page continue or exist
+	void previous() {
+		switch(userInput()) {
+		case 1:{
+			fetchInput();
+			break;
+		}
+		case 2:{
+			new userLogin();
+			break;
+		}
+		default : {
+			wrongInput();
+			previous();
+		}
+//		switch end here!
+		}
+	}
+	
 // Storing the data into database 
 	void storingData() {
-		String query = "insert into userDetails(id,name,password) values (1001,'"+getUserid()+"','"+getPassword()+"');";
+		String query = "insert into userDetails(name,password) values ('"+getUserid()+"','"+getPassword()+"');";
 		try {
 			connect.stmt.executeUpdate(query);
 			System.out.println("\nRegistration Successful....!\n");
 			new userLogin();
+		}
+		catch(SQLIntegrityConstraintViolationException e) {
+			if(e.toString().contains("Duplicate entry"))
+				System.out.println("\nUser name is alraedy Existed...!\n");
+			System.out.println("1. Continue");
+			System.out.println("2. Exit");
+			previous();
 		}
 		catch(Exception e) {
 			System.out.println("Check the Querry...!");

@@ -21,7 +21,7 @@ public class home extends library{
 			wrongInput();
 			homepage();
 		}
-//		switch end here
+//		switch end here!
 		}
 	}
 }

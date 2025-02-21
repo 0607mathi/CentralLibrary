@@ -3,6 +3,7 @@ import java.sql.*;
 public class ConnectionManager {
 	Connection con = null;
 	Statement stmt = null;
+	ResultSet rs = null;
 //	Constructor
 	 ConnectionManager(){
 		try {
