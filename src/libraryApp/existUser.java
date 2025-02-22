@@ -53,6 +53,7 @@ public class existUser extends library {
 		}
 		default:{
 			wrongInput();
+			previous();
 		}
 		}
 	}
