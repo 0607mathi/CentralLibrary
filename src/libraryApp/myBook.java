@@ -15,8 +15,7 @@ public class myBook extends library{
 	}
 	
 	myBook(String userid){
-		System.out.println("My Books");
-		System.out.println("--------");
+		title("My Books");
 		this.setUserid(userid);
 		getBooks();
 	}
@@ -31,7 +30,7 @@ public class myBook extends library{
 		return flag;
 	}
 //	for backspace previous folder
-	void back() {
+	 void back() {
 		System.out.print("\nPress 0 back to Dashboard\n");
 		switch(userInput()) {
 		case 0:

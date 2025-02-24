@@ -9,8 +9,7 @@ public class newUser extends library {
 	ResultSet rs = null;
 	
 	newUser(){
-		System.out.println("Register User Details");
-		System.out.println("---------------------");
+		title("Register User Details");
 		fetchInput();
 	}
 	

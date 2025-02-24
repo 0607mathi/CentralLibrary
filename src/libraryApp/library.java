@@ -16,6 +16,16 @@ public class library {
 	public static void wrongInput() {
 		System.out.println("Enter proper Input...!");
 	}
+	
+//	for the function 
+	public static void title(String title) {
+		System.out.println(title);
+		for(int i=0;i<title.length();i++) {
+			System.out.print("-");
+		}
+		System.out.println("");
+	}
+	
 	public static void main(String[] args) {
 		home in = new home();
 		in.homepage();

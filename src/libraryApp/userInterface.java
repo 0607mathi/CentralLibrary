@@ -19,7 +19,7 @@ public class userInterface extends library {
 			System.out.print('-');
 		}
 		System.out.println("");
-		String features[]= {"1. My Books","2. Buy Book","3. Rent Book","4. Submit Book","5. Logout"};
+		String features[]= {"1. My Books","2. Rent Book","3. Submit Book","4. Logout"};
 		for(String i : features) {
 			System.out.println(i);
 		}
@@ -33,15 +33,13 @@ public class userInterface extends library {
 			break;
 		}
 		case 2:{
+			new buyBook(getUserid());
 			break;
 		}
 		case 3:{
 			break;
 		}
 		case 4:{
-			break;
-		}
-		case 5:{
 			new userLogin();
 			break;
 		}

@@ -11,8 +11,7 @@ public class existUser extends library {
 	
 //	constructor
 	existUser(){
-		System.out.println("Enter your Credintials");
-		System.out.println("----------------------");
+		title("Enter your Credintials");
 		fetchInput();
 	}
 	

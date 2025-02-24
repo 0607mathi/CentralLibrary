@@ -2,8 +2,7 @@ package libraryApp;
 
 public class userLogin extends library {
 	public userLogin() {
-		System.out.println("User Login");
-		System.out.println("----------");
+		title("User Login");
 		System.out.println("1. Exist User");
 		System.out.println("2. New User");
 		System.out.println("3. Exit");

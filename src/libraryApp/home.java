@@ -1,14 +1,13 @@
 package libraryApp;
 
-public class home{
+public class home extends library{
 	
-	void homepage() {
-		System.out.println("\t\tWelcome to Central Library");
-		System.out.println("\t\t--------------------------");
+	void homepage()  {
+		title("Welcome to Central Library");
 		System.out.println("1. User Login");
 		System.out.println("2. Admin Login");
 		
-		switch(library.userInput()) {
+		switch(userInput()) {
 		case 1:{
 //			User Login page
 			new userLogin();
@@ -19,7 +18,7 @@ public class home{
 			break;
 		}
 		default:{
-			library.wrongInput();
+			wrongInput();
 			homepage();
 		}
 //		switch end here!
