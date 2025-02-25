@@ -1,9 +1,6 @@
 package libraryApp;
 
 public class home extends library{
-	home() {
-		System.out.print("");
-	}
 	
 	void homepage()  {
 		title("Welcome to Central Library");

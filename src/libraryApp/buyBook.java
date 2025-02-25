@@ -244,7 +244,7 @@ public class buyBook extends library {
 				System.out.println("   Price   : "+getPrice());
 				System.out.println("");
 			}
-			previous();
+			back();
 		}
 		catch(Exception e) {
 			System.out.println("Error in Sql Query...!");

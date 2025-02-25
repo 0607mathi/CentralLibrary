@@ -38,6 +38,7 @@ public class userInterface extends library {
 		}
 		case 3:{
 //			Submit books will coming soon...!
+			new submitBook(getUserid());
 			break;
 		}
 		case 4:{
