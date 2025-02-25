@@ -24,14 +24,25 @@ select * from bookDetails;
 
 -- This all are updateing altering query
 select name from userDetails where name ='mathi';
+
 drop table rental;
+
 drop table bookDetails;
+
 insert into rental (userId,bookId,bookname,BookStatus) value (1001,100,'Java',1);
+
 insert into rental (userId,bookId,bookname,BookStatus) value (1001,102,'sql',1);
+
 select * from rental;
+
 select bookId,bookname from rental where userId=(select id from userDetails where name='prateek');
+
 insert into bookDetails (bookId,bookname,Authour,price) values (100,'java','Tambraz',1000);
+
 insert into bookDetails (bookId,bookname,Authour,price) values (200,'sql','Nagaraj',1000);
+
 insert into bookDetails (bookname,Authour,price) values ('frontend','Mathiyarasu',2000);
+
 select * from bookDetails;
+
 alter table userDetails modify password varchar(16);
