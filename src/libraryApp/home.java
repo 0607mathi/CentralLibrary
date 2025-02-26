@@ -1,8 +1,8 @@
 package libraryApp;
-
+import admin.*;
 public class home extends library{
 	
-	void homepage()  {
+	public void homepage()  {
 		title("Welcome to Central Library");
 		System.out.println("1. User Login");
 		System.out.println("2. Admin Login");
@@ -14,7 +14,7 @@ public class home extends library{
 			break;
 		}
 		case 2:{
-//			Admin login page 
+			new AdminLogin();
 			break;
 		}
 		default:{

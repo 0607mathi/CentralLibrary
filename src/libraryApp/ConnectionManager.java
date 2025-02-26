@@ -1,11 +1,11 @@
 package libraryApp;
 import java.sql.*;
 public class ConnectionManager {
-	Connection con = null;
-	Statement stmt = null;
-	ResultSet rs = null;
+	public Connection con = null;
+	public Statement stmt = null;
+	public ResultSet rs = null;
 //	Constructor
-	 ConnectionManager(){
+	 public ConnectionManager(){
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","root");
