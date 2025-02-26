@@ -10,7 +10,7 @@ public class existUser extends library {
 	private String password;
 	
 //	constructor
-	existUser(){
+	public existUser(){
 		title("Enter your Credintials");
 		fetchInput();
 	}

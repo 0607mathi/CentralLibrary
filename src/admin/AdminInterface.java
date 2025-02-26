@@ -2,7 +2,7 @@ package admin;
 import libraryApp.*;
 public class AdminInterface extends library {
 	
-	AdminInterface(String AdminUserId){
+	public AdminInterface(String AdminUserId){
 		System.out.println("");
 		title("Welcome "+AdminUserId);
 		String AdminMenu[]= {"1. Add Book","2. Remove Book","3. Alter Book Details","4. Pending Book","5. User Details","6. Logout"};
@@ -19,6 +19,7 @@ public class AdminInterface extends library {
 			break;
 		}
 		case 2:{
+			new RemoveBook(AdminUserId);
 			break;
 		}
 		case 3:{

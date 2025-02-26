@@ -11,7 +11,7 @@ public class userInterface extends library {
 		this.userid = userid;
 	}
 //	default constructor
-	userInterface(String userid){
+	public userInterface(String userid){
 		this.setUserid(userid);
 		String greeting ="Welcome "+userid;
 		System.out.println(greeting);
