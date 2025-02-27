@@ -26,6 +26,7 @@ public class AdminInterface extends library {
 			break;
 		}
 		case 4:{
+			new PendingBooks(AdminUserId);
 			break;
 		}
 		case 5:{
