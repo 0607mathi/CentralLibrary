@@ -30,6 +30,7 @@ public class AdminInterface extends library {
 			break;
 		}
 		case 5:{
+			new UserDetials(AdminUserId);
 			break;
 		}
 		case 6:{
