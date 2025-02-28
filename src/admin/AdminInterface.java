@@ -23,6 +23,7 @@ public class AdminInterface extends library {
 			break;
 		}
 		case 3:{
+			new AlterBookDetails(AdminUserId);
 			break;
 		}
 		case 4:{

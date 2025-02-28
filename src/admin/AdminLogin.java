@@ -52,6 +52,7 @@ public class AdminLogin extends library {
 		}
 		catch(Exception e) {
 			System.out.println("Error in Sql Statement");
+			System.out.println("Error is : "+e.toString());
 		}
 	}
 	
