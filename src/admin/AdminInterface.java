@@ -5,7 +5,7 @@ public class AdminInterface extends library {
 	public AdminInterface(String AdminUserId){
 		System.out.println("");
 		title("Welcome "+AdminUserId);
-		String AdminMenu[]= {"1. Add Book","2. Remove Book","3. Alter Book Details","4. Pending Book","5. User Details","6. Logout"};
+		String AdminMenu[]= {"1. Add Book","2. Remove Book","3. Alter Book Details","4. Pending Book","5. User Details","6. Show All Book Details","7. Logout"};
 		for(String menu : AdminMenu) {
 			System.out.println(menu);
 		}
@@ -35,6 +35,10 @@ public class AdminInterface extends library {
 			break;
 		}
 		case 6:{
+			new GetAllBookDetails(AdminUserId);
+			break;
+		}
+		case 7:{
 			System.out.println(AdminUserId+"Logout Successfully...!\n");
 			new home().homepage();
 			break;
