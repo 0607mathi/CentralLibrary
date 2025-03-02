@@ -52,18 +52,24 @@ public class submitBook extends library {
 		switch(YorN) {
 		case 'y':{
 			try {
-				String bookis = "select userId from rental where bookId="+bookId+";";
+				String bookis = "select name from userDetails where id in (select userId from rental where bookId="+bookId+");";
 				connect.rs=connect.stmt.executeQuery(bookis);
 //				System.out.println(connect.rs.next());
-				if(connect.rs.next()) {
-					if(connect.rs.getString("id")==bookId) {
+//				System.out.println("--------"+userId);
+				boolean flag = false;
+				while(connect.rs.next()) {
+//					System.out.println(connect.rs.getString(1));
+					if(connect.rs.getString(1).equals(userId)) {
+						flag=true;
 						String subQuery= "select id from userDetails where name='"+userId+"'";
 						String Query ="delete from rental where userId=("+subQuery+") and bookId="+bookId+";";
 						connect.stmt.executeUpdate(Query);
 						System.out.println("\nBook Submitted Successfully...!");
+						previous(userId);
+						break;
 					}
 				}
-				else {
+				if(!flag){
 					System.out.println("\nEnter a Valid Book ID...!");
 					previous(userId);
 				}
