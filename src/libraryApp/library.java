@@ -7,7 +7,14 @@ public class library {
 //	this method getting input from user
 	public static int userInput() {
 		System.out.print("\nEnter your input : ");
-		int input = sc.nextInt();
+		int input=0;
+		 try {
+	            input = sc.nextInt();
+	        } catch (InputMismatchException e) {
+	            System.out.println("\nPlease enter a valid Input..!");
+	            sc.nextLine(); 
+	            return userInput();
+	        }
 		System.out.println("");
 		return input;
 	}

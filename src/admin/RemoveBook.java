@@ -1,6 +1,6 @@
 package admin;
-
 import libraryApp.*;
+import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 public class RemoveBook extends library {
 	Scanner sc = new Scanner(System.in);
@@ -65,7 +65,7 @@ public class RemoveBook extends library {
 		}
 		catch(Exception e) {
 			System.out.println("Error in SQl Query Statement...!");
-			System.out.println("Error is  : ");
+			System.out.println("Error is  : "+e.toString());
 		}
 	}
 	
@@ -89,9 +89,14 @@ public class RemoveBook extends library {
 				removeLoop();
 			}
 			System.out.println("");
-		}catch(Exception e) {
+		}
+		catch(SQLSyntaxErrorException e) {
+			System.out.println("Enter Valid Book Id..!");
+			removeLoop();
+		}
+		catch(Exception e) {
 			System.out.println("Error in SQl Query Statement...!");
-			System.out.println("Error is  : ");
+			System.out.println("Error is  : ---"+e.toString());
 		}
 	}
 

@@ -19,8 +19,14 @@ public class AddBook extends library {
 		setBookName(sc.nextLine());
 		System.out.print("Enter the Author Name   : ");
 		setBookAuthor(sc.nextLine());
-		System.out.print("Enter Price of the Book : ");
-		setBookPrice(sc.nextDouble());
+		try {
+			System.out.print("Enter Price of the Book : ");
+			setBookPrice(sc.nextDouble());
+		}catch(Exception e) {
+			System.out.println("\nEnter Valid Input for Book Price\n");
+			sc.nextLine();
+			addBook();
+		}
 		insertBook();
 	}
 	

@@ -1,7 +1,7 @@
 package libraryApp;
 
 public class userInterface extends library {
-	
+	ConnectionManager connect = new ConnectionManager();
 	private String userid ;
 	public String getUserid() {
 		return userid;
@@ -37,11 +37,11 @@ public class userInterface extends library {
 			break;
 		}
 		case 3:{
-//			Submit books will coming soon...!
 			new submitBook(getUserid());
 			break;
 		}
 		case 4:{
+			saveData();
 			new userLogin();
 			break;
 		}
@@ -49,6 +49,18 @@ public class userInterface extends library {
 			wrongInput();
 			userMenu();
 		}
+		}
+	}
+	
+	void saveData() {
+		try {
+			String Query ="commit";
+			connect.stmt.executeUpdate(Query);
+			System.out.println("Logout Successfully...!\n");
+		}
+		catch(Exception e) {
+			System.out.println("Error in Sql Statement...!");
+			System.out.println("Error is : "+e.toString());
 		}
 	}
 

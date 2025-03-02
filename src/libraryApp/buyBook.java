@@ -23,7 +23,7 @@ public class buyBook extends library {
 	
 //	for backspace previous folder
 	 void back() {
-		System.out.print("\nPress 0 back to Dashboard\n");
+		System.out.print("\nPress 0 back to Previous Page..!\n");
 		switch(userInput()) {
 		case 0:
 		{

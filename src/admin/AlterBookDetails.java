@@ -1,5 +1,7 @@
 package admin;
 import libraryApp.*;
+
+import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 
 public class AlterBookDetails extends library {
@@ -10,8 +12,9 @@ public class AlterBookDetails extends library {
 	public AlterBookDetails(String AdminUserId) {
 		setAdminUserId(AdminUserId);
 		title("Book Data Modification");
-		System.out.print("\nEnter the Book Id :");
+		System.out.print("\nEnter the Book Id : ");
 		setBookId(sc.next());
+		System.out.println("");
 		displayBook();
 		chooseModification();
 	}
@@ -56,6 +59,7 @@ public class AlterBookDetails extends library {
 		try {
 			System.out.print("\nAre you Sure to Change (y/n) : ");
 			char input = sc.next().charAt(0);
+			System.out.println("");
 			switch(input) {
 			case 'y':{
 				String Query ="update bookDetails set bookname = '"+bookname+"' where bookId = "+getBookId()+";";
@@ -71,10 +75,12 @@ public class AlterBookDetails extends library {
 			}
 			default:{
 				wrongInput();
+				System.out.println("");
 				changeBookname();
 			}
 			}
-		}catch(Exception e) {
+		}
+		catch(Exception e) {
 			if(e.toString().contains("Duplicate entry")) {
 				System.out.println("\nThis book name is already exist please check your book name...!");
 				previousPage();
@@ -93,6 +99,7 @@ public class AlterBookDetails extends library {
 		try {
 			System.out.print("\nAre you Sure to Change (y/n) : ");
 			char input = sc.next().charAt(0);
+			System.out.println("");
 			switch(input) {
 			case 'y':{
 				String Query ="update bookDetails set Authour = '"+Author+"' where bookId = "+getBookId()+";";
@@ -108,7 +115,8 @@ public class AlterBookDetails extends library {
 			}
 			default:{
 				wrongInput();
-				changeBookname();
+				System.out.println("");
+				changeBookAuthor();
 			}
 			}
 		}catch(Exception e) {
@@ -123,6 +131,7 @@ public class AlterBookDetails extends library {
 		try {
 			System.out.print("\nAre you Sure to Change (y/n) : ");
 			char input = sc.next().charAt(0);
+			System.out.println("");
 			switch(input) {
 			case 'y':{
 				String Query ="update bookDetails set price = '"+price+"' where bookId = "+getBookId()+";";
@@ -138,7 +147,8 @@ public class AlterBookDetails extends library {
 			}
 			default:{
 				wrongInput();
-				changeBookname();
+				System.out.println("");
+				changeBookPrice();
 			}
 			}
 		}catch(Exception e) {
@@ -184,6 +194,10 @@ public class AlterBookDetails extends library {
 				System.out.println("\nEnter a valid BookId...!");
 				back();
 			}
+		}
+		catch(SQLSyntaxErrorException e) {
+			System.out.println("\nEnter Valid Book Id..!\n");
+			new AlterBookDetails(getAdminUserId());
 		}
 		catch(Exception e) {
 			System.out.println("\nError in SQL Query...!");

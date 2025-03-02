@@ -42,6 +42,7 @@ public class GetAllBookDetails extends library {
 		}
 		default:{
 			wrongInput();
+			System.out.println("");
 			back();
 		}
 		}

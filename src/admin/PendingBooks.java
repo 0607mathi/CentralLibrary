@@ -72,6 +72,7 @@ public class PendingBooks extends library {
 		}
 		default:{
 			wrongInput();
+			System.out.println("");
 			backPage();
 		}
 		}

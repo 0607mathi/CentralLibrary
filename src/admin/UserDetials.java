@@ -49,6 +49,7 @@ public class UserDetials extends library {
 		}
 		default:{
 			wrongInput();
+			System.out.println("");
 			backPage();
 		}
 		}

@@ -1,7 +1,7 @@
 package admin;
 import libraryApp.*;
 public class AdminInterface extends library {
-	
+	ConnectionManager connect = new ConnectionManager();
 	public AdminInterface(String AdminUserId){
 		System.out.println("");
 		title("Welcome "+AdminUserId);
@@ -39,7 +39,8 @@ public class AdminInterface extends library {
 			break;
 		}
 		case 7:{
-			System.out.println(AdminUserId+"Logout Successfully...!\n");
+			saveData();
+			System.out.println(AdminUserId+" Logout Successfully...!\n");
 			new home().homepage();
 			break;
 		}
@@ -47,6 +48,17 @@ public class AdminInterface extends library {
 			wrongInput();
 			AdminMenu(AdminUserId);
 		}
+		}
+	}
+	
+	void saveData() {
+		try {
+			String Query ="commit";
+			connect.stmt.executeUpdate(Query);
+		}
+		catch(Exception e) {
+			System.out.println("Error in Sql Statement...!");
+			System.out.println("Error is : "+e.toString());
 		}
 	}
 }

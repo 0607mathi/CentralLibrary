@@ -1,5 +1,7 @@
 package libraryApp;
 
+import java.sql.*;
+
 public class submitBook extends library {
 	ConnectionManager connect  = new ConnectionManager();
 	submitBook(String userId){
@@ -66,10 +68,15 @@ public class submitBook extends library {
 					previous(userId);
 				}
 			}
+			catch(SQLSyntaxErrorException e) {
+				System.out.println("\nInvalid Book Id...!");
+				previous( userId);
+			}
 			catch(Exception e) {
 				System.out.println("Error in Sql Statement...!");
 				System.out.println("Error is : "+e.toString());
 			}
+			
 			break;
 		}
 		case 'n':{
